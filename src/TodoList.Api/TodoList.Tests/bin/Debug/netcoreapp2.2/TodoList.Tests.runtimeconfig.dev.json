@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/yuriy.timoshenkov/.dotnet/store/|arch|/|tfm|",
+      "/Users/yuriy.timoshenkov/.nuget/packages",
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ]
+  }
+}

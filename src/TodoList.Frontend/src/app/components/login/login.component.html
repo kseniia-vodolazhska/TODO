@@ -1,0 +1,22 @@
+<form *ngIf="!currentUser" class="form-inline" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <div *ngIf="displayLoginFailedMessage" class="navbar-text mr-3">Incorrect username or password</div>
+
+  <input 
+    class="form-control mr-sm-2" 
+    type="text" 
+    placeholder="E-mail"
+    formControlName="email">
+  <input 
+    class="form-control mr-sm-2" 
+    type="password" 
+    placeholder="Password"
+    formControlName="password">
+
+  <button class="btn btn-outline-light my-2 my-sm-0" type="submit" [disabled]="loginForm.invalid">Login</button>  
+  <a routerLink="/register" class="btn btn-outline-light ml-sm-2">Register</a>
+</form>
+
+<div *ngIf="currentUser">
+    <span class="navbar-text mr-3">Welcome {{ currentUser.email }}</span>
+    <button class="btn btn-outline-light" type="button" (click)="onLogout()">Logout</button>
+</div>

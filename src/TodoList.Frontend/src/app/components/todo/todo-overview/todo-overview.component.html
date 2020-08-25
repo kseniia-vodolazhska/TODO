@@ -1,0 +1,26 @@
+<h1 class="display-4 my-3">Todo items</h1>
+<div>
+  <input [(ngModel)]="searchText" type="text">
+  <button class="btn btn-primary my-2" (click)="onSearch()">Search</button>
+</div>
+
+<button class="btn btn-primary my-2" (click)="onAdd()">Add new</button>
+
+<div class="row row-equal-height">
+  <div class="col-xl-4 col-md-6 col-sm-12 mb-4" *ngFor="let todoItem of todoItems">
+    <div class="card">
+      <div class="card-header">
+        {{ todoItem.title }}
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ todoItem.description }}</p>
+        <button class="btn btn-primary" (click)="onEdit(todoItem.id)">Edit</button>
+        <button class="btn btn-danger ml-2" (click)="onDelete(todoItem.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="todoItems.length === 0" class="alert alert-info">
+  You haven't added any todo items yet.
+</div>
